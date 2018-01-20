@@ -100,3 +100,11 @@ const STORE = [
       correctAnswer: 0
     }
 ];
+
+const COMMENTS = [
+  "\"You know nothing, Jon Snow !\"",
+  "And you call yourself a fan !",
+  "You need to do some serious re-watching !",
+  "Not bad, can stand to brush up a bit, though !",
+  "Perfect, you are a true Thronie !"
+];  

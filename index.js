@@ -17,6 +17,24 @@ function restartQuiz () {
 	});
 }
 
+function addComment() {
+  let commentText = "";
+
+  if (score === 0) {
+    commentText = results-comments[0];
+  } else if (score > 0 && score < 4) {
+    commentText = COMMENTS[1];
+  } else if (score > 3 && score < 7) {
+    commentText = COMMENTS[2];
+  } else if (score > 6 && score < 10) {
+    commentText = COMMENTS[3];
+  } else {
+    commentText = COMMENTS[4];
+  }
+  
+  $(".results-comments").text(`${commentText}`);
+}
+
 function renderNextQuestion() {
 	$("#feedback-button").click(function(event){
     event.preventDefault();
@@ -32,8 +50,8 @@ function renderNextQuestion() {
 
     	// Comment and correct answer
 	  	$(".results-score").text(`Score: ${score}/${totalQuestions}`);
-	  	$(".results-comments").text(``);
-    }
+      addComment();
+	  }
   });
 }
 

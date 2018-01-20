@@ -52,15 +52,15 @@ body {
   height: 50px;
   top: 10%;
   left: 10%;
-  font-size: 3rem;
-  color: gainsboro;
+  font-size: 2rem;
+  color: #ff7800;
   text-shadow: 2px 2px black;
 }
 
 #start-button {
-  position: fixed;
+  position: absolute;
   left: 29%;
-  top: 80%;
+  top: 75%;
   height: 50px;
   width: 42%;
   line-height: 50px;
