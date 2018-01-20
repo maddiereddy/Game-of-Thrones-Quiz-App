@@ -39,15 +39,13 @@ function renderNextQuestion() {
 
 function selectionRequired(){
     
-  //popup selection required gif
+  // Popup - selection required gif
   $('body').append(`
     <div class="overlay">
       <div class="popup">
         <a class="close" href="#">&times;</a>
-        <h2>Oops, forgot to pick an answer </h2>
-        <div class="gif-container">
-          <img src="./giphy-downsized.gif" alt="Please make a selection">
-        </div>
+        <h2>Oops, forgot to pick an answer ?</h2>
+        <img class="popup-gif" src="./giphy-downsized.gif" alt="Please make a selection">
       </div>
     </div>`);
   $('.close').click(function () {
