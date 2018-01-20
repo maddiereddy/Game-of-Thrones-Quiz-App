@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Game Of Thrones Quiz</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
+  </head>
+  <body>
+   <main role="main">
+      <!-- Landing page -->
+      <div class="start-page">
+        <div class="start-image"></div>  
+        <div class="start-card">
+          <span class="start-header">When You Play The</span>
+          <button type="button" id="start-button">You Win or You Die !</button>
+        </div>
+      </div>
+      <!-- Question page -->
+      <div class="question-page hidden">
+        <div class="question-image"></div>    
+        <div class="question-card">
+          <div class="question-header">
+            <span class="question-number"></span>
+            <span class="question-score"></span>
+            <br>
+            <hr>
+          </div>
+          <form>
+            <div class="question-main">
+              <p class="question-text"></p>
+              <fieldset>
+                <label class="answerOption">
+                  <input type="radio" id="answer1" name="answer" required="" value="">
+                  <span class = "answer1-text"></span>
+                </label>
+                <label class="answerOption">
+                  <input type="radio" id="answer2" name="answer" required="" value="">
+                  <span class = "answer2-text"></span>
+                </label>
+                <label class="answerOption">
+                  <input type="radio" id="answer3" name="answer" required="" value="">
+                  <span class = "answer3-text"></span>
+                </label>
+                <label class="answerOption">
+                  <input type="radio" id="answer4" name="answer" required="" value="">
+                  <span class = "answer4-text"></span>
+                </label>
+              </fieldset>
+							<button type="button" id="question-button">Check Answer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Feedback page -->
+      <div class="feedback-page hidden">
+        <div class="feedback-image"></div>    
+        <div class="feedback-card">
+          <div class="feedback-header">
+            <span class="feedback-number"></span>
+            <span class="feedback-score"></span>
+            <br>
+            <hr>
+          </div>
+          <form>
+            <div class="feedback-main">
+              <p class="feedback-comment"></p>
+              <p class="feedback-answer"><i><b></b></i></p>
+            </div>
+            <button type="button" id="feedback-button">Next</button>
+          </form>
+        </div>
+      </div>
+      <!-- Results page -->
+      <div class="results-page hidden">
+        <div class="results-image"></div>    
+        <div class="results-card">
+         		<div class="results-main">
+              <p class="results-score"></p>
+              <p class="results-comments"><i></i></p>
+            </div>
+            <button type="button" id="results-button">Play Again</button>
+        </div>
+      </div>
+    </main>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
