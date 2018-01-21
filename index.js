@@ -1,25 +1,33 @@
-// 1. hook up start button and render question page view while removing the landing page view
-// 2. display questions
-// 3. check answer and give correct answer on feedback page view
-// 4. display correct question number
-// 5. display correct scrore
-// 6. check if end of questions array and continue till end 
-// 7. at end of array display results page view
+//-----------------To-Do Check List----------------------//
+// 1. Hook up start button and render question page view while removing the landing page view
+// 2. Display questions
+// 3. Error Checking: make sure user makes a selection
+// 4. Check answer and give correct answer on feedback page view
+// 5. Display correct question number
+// 6. Display correct scrore
+// 7. Check if end of questions array and continue till end 
+// 8. At end of questions array display results page view
+// 9. Re-start quiz if requested
 
+// Initialize global variables
 let questionNum = 0;
 let score = 0;
 let totalQuestions = STORE.length;
-
-// Listen for the Start button to be clicked
+ 
+// Listen for the re-start button to be clicked
+// Re-load app if clicked
 function restartQuiz () {
+
 	$('.results-card').on('click', '#results-button', function (event) {
 		location.reload();
 	});
 }
 
+// Display comment text on results page
 function addComment() {
   let commentText = "";
 
+  // display different comment depending on user score 
   if (score === 0) {
     commentText = results-comments[0];
   } else if (score > 0 && score < 4) {
@@ -31,11 +39,15 @@ function addComment() {
   } else {
     commentText = COMMENTS[4];
   }
-  
+
   $(".results-comments").text(`${commentText}`);
 }
 
+// check if list of questions completed 
+// if not, continue to next question in array
+// else, display results page
 function renderNextQuestion() {
+
 	$("#feedback-button").click(function(event){
     event.preventDefault();
 
@@ -55,9 +67,9 @@ function renderNextQuestion() {
   });
 }
 
+// display pop up window that prompts user to make a selection
 function selectionRequired(){
-    
-  // Popup - selection required gif
+  
   $('body').append(`
     <div class="overlay">
       <div class="popup">
@@ -91,9 +103,13 @@ function renderFeedbackPage() {
     // If no answer is selected, prompt User
     // else update the correct counter
     if (userChoice === undefined) {
+      // display pop up window
       selectionRequired();
       return;
+
     } else {
+
+      // different comment text based on if answer is correct
 			if(userChoice === correctAnswer) {
 	    	score++;
 	    	isCorrect = "Correct !";
@@ -146,8 +162,10 @@ function renderQuestionPage() {
   $(".question-score").text(`Score: ${score}/${totalQuestions}`);
 }
 
-// Listen for the Start button to be clicked
+// listen for the Start button to be clicked
+// hide landing page and display question page
 function startQuiz () {
+
 	$('.start-card').on('click', '#start-button', function (event) {
 		event.preventDefault();
 
@@ -156,7 +174,7 @@ function startQuiz () {
 	});
 }
 
-//run quiz functions
+// run quiz app functions
 function initQuiz () {
   startQuiz();
   renderQuestionPage();
