@@ -65,10 +65,10 @@ body {
   width: 42%;
   line-height: 50px;
   font-size: 2rem;
-  color: gainsboro;
+  color: white;
   text-shadow: 2px 2px black;
   border-radius: 8px;
-  border: 1px solid gainsboro;
+  border: 1px solid white;
   background-color: gray;
   box-shadow: 3px 3px black;
   cursor: pointer;
@@ -128,7 +128,7 @@ hr {
   clear: both;
   margin-top: 10px;
   height: 5px;
-  background-color: #ff7800;
+  background-color: #ff5500;
   border: 0;
   box-shadow: 2px 2px dimgray;
 }
@@ -170,6 +170,7 @@ fieldset {
   width: 60%;
   left: 20%;
   vertical-align: middle;
+  text-align: left;
 }
 
 #question-button {
@@ -179,7 +180,7 @@ fieldset {
   left: calc((100% - 200px)/2);
   padding: 8px 20px;
   font-size: 1.3em;
-  background-color: #ff7800;
+  background-color: #ff5500;
   border: 1px solid dimgray;
   border-radius: 8px;
   box-shadow: 3px 3px dimgray;
@@ -194,7 +195,7 @@ fieldset {
   left: calc((100% - 200px)/2);
   padding: 8px 20px;
   font-size: 1.3em;
-  background-color: #ff7800;
+  background-color: #ff5500;
   border: 1px solid dimgray;
   border-radius: 8px;
   box-shadow: 3px 3px dimgray;
@@ -208,9 +209,9 @@ fieldset {
   width: 60%;
   left: 20%;
   top: 120px;
-  background-color: lightgray;
+  background-color: white;
   border-radius: 8px;
-  border: 1px solid dimgray;
+  border: 3px solid #ff5500;
   box-shadow: 3px 3px dimgray;
 }
 
@@ -236,7 +237,7 @@ fieldset {
 
 .popup {
   line-height: 28px;
-  background-color: lightgray;
+  background-color: white;
   margin: 0 auto;
   padding: 10px;
   width: 70%;
@@ -244,13 +245,13 @@ fieldset {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 5px solid #ff7800;
+  border: 5px solid #ff5500;
   transform: translate(-50%, -50%);
 }
 
 .close {
   font-size: 3em;
-  color: #ff7800;
+  color: #ff5500;
 }
 
 .popup-gif {
