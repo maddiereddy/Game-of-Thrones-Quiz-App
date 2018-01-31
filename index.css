@@ -60,7 +60,7 @@ body {
 #start-button {
   position: absolute;
   left: 29%;
-  top: 75%;
+  top: 60%;
   height: 50px;
   width: 42%;
   line-height: 50px;
@@ -108,10 +108,10 @@ body {
 }
 
 .question-header, .feedback-header {
-	position: fixed;
-	top: 5%;
-	left: 10%;
-	width: 80%;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  width: 80%;
   font-size: 1.3em;
 }
 
@@ -134,9 +134,9 @@ hr {
 }
 
 .question-main, .feedback-main {
-	position: fixed;
-	top: 20%;
-	width: 100%;
+  position: fixed;
+  top: 20%;
+  width: 100%;
 }
 
 .question-main p, .feedback-main p {
@@ -157,7 +157,8 @@ hr {
     box-shadow: 2px 2px black;
 }
 .question-main label:hover, .question-main label:focus {
-    background-color: gray;
+    background-color: lightgray;
+    color: black;
 }
 
 input[type="radio"]{
@@ -172,10 +173,10 @@ fieldset {
 }
 
 #question-button {
-	position: absolute;
-	margin-top: 200px;
-	width: 200px;
-	left: calc((100% - 200px)/2);
+  position: absolute;
+  margin-top: 200px;
+  width: 200px;
+  left: calc((100% - 200px)/2);
   padding: 8px 20px;
   font-size: 1.3em;
   background-color: #ff7800;
@@ -187,10 +188,10 @@ fieldset {
 /*---------Feedback Page---------------------*/
 
 #feedback-button, #results-button {
-	position: absolute;
-	margin-top: 400px;
-	width: 200px;
-	left: calc((100% - 200px)/2);
+  position: absolute;
+  margin-top: 400px;
+  width: 200px;
+  left: calc((100% - 200px)/2);
   padding: 8px 20px;
   font-size: 1.3em;
   background-color: #ff7800;
@@ -218,6 +219,9 @@ fieldset {
   font-size: 2em;
 }
 
+.results-comments {
+  font-size: 1.2em;
+}
 /*---------------Popup Box--------------*/
 
 .overlay {

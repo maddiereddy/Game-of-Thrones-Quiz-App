@@ -18,9 +18,9 @@ let totalQuestions = STORE.length;
 // Re-load app if clicked
 function restartQuiz () {
 
-	$('.results-card').on('click', '#results-button', function (event) {
-		location.reload();
-	});
+  $('.results-card').on('click', '#results-button', function (event) {
+    location.reload();
+  });
 }
 
 // Display comment text on results page
@@ -29,7 +29,7 @@ function addComment() {
 
   // display different comment depending on user score 
   if (score === 0) {
-    commentText = results-comments[0];
+    commentText = COMMENTS[0];
   } else if (score > 0 && score < 4) {
     commentText = COMMENTS[1];
   } else if (score > 3 && score < 7) {
@@ -48,22 +48,22 @@ function addComment() {
 // else, display results page
 function renderNextQuestion() {
 
-	$("#feedback-button").click(function(event){
+  $("#feedback-button").click(function(event){
     event.preventDefault();
 
     if(questionNum < totalQuestions) {
-    	$(".question-page").removeClass("hidden");
-    	$(".feedback-page").addClass("hidden");	
+      $(".question-page").removeClass("hidden");
+      $(".feedback-page").addClass("hidden"); 
 
-    	renderQuestionPage();
+      renderQuestionPage();
     } else {
-    	$(".results-page").removeClass("hidden");
-    	$(".feedback-page").addClass("hidden");	
+      $(".results-page").removeClass("hidden");
+      $(".feedback-page").addClass("hidden"); 
 
-    	// Comment and correct answer
-	  	$(".results-score").text(`Score: ${score}/${totalQuestions}`);
+      // Comment and correct answer
+      $(".results-score").text(`Score: ${score}/${totalQuestions}`);
       addComment();
-	  }
+    }
   });
 }
 
@@ -85,17 +85,17 @@ function selectionRequired(){
 }
 
 function renderFeedbackPage() {
-	// 0. Error Check - make sure user selected an answer
-	// 1. Render Feedback page view
-	// 2. Check Answer
-	// 3. Display Correct Answer
-	// 4. Update Score
+  // 0. Error Check - make sure user selected an answer
+  // 1. Render Feedback page view
+  // 2. Check Answer
+  // 3. Display Correct Answer
+  // 4. Update Score
 
-	let isCorrect = "Wrong !";
+  let isCorrect = "Wrong !";
 
-	$("#question-button").click(function(event){
+  $("#question-button").click(function(event){
 
-		event.preventDefault();
+    event.preventDefault();
 
     let correctAnswer = STORE[questionNum].answers[STORE[questionNum].correctAnswer];
     let userChoice = $('input[name=answer]:checked').val();
@@ -110,34 +110,34 @@ function renderFeedbackPage() {
     } else {
 
       // different comment text based on if answer is correct
-			if(userChoice === correctAnswer) {
-	    	score++;
-	    	isCorrect = "Correct !";
-	    } else {
-	    	isCorrect = "Wrong !";
-	    }
+      if(userChoice === correctAnswer) {
+        score++;
+        isCorrect = "Correct !";
+      } else {
+        isCorrect = "Wrong !";
+      }
 
-			$(".question-page").addClass("hidden");
-	    $(".feedback-page").removeClass("hidden");
+      $(".question-page").addClass("hidden");
+      $(".feedback-page").removeClass("hidden");
 
-	    // render current question number and score
-	  	$(".feedback-number").text(`Question: ${(questionNum+1)}/${totalQuestions}`);
-	  	$(".feedback-score").text(`Score: ${score}/${totalQuestions}`);
+      // render current question number and score
+      $(".feedback-number").text(`Question: ${(questionNum+1)}/${totalQuestions}`);
+      $(".feedback-score").text(`Score: ${score}/${totalQuestions}`);
 
-	  	// Comment and correct answer
-	  	$(".feedback-comment").text(`${isCorrect} The correct answer is`);
-	  	$(".feedback-answer").text(`${correctAnswer}`);
+      // Comment and correct answer
+      $(".feedback-comment").text(`${isCorrect} The correct answer is`);
+      $(".feedback-answer").text(`${correctAnswer}`);
 
-			questionNum++;	
+      questionNum++;  
 
-		}
+    }
   });
 }
 
 // render question page view in DOM
 function renderQuestionPage() {
 
-	let question = STORE[questionNum].question;
+  let question = STORE[questionNum].question;
   let answer1 = STORE[questionNum].answers[0];
   let answer2 = STORE[questionNum].answers[1];
   let answer3 = STORE[questionNum].answers[2];
@@ -146,7 +146,7 @@ function renderQuestionPage() {
   // Uncheck all radio buttons to clear previous selections
   $('input[name=answer]:checked').prop('checked', false);
 
-	//render question and answers
+  //render question and answers
   $('.question-text').text(question);
   $("#answer1").attr("value", answer1);
   $("#answer2").attr("value", answer2);
@@ -166,12 +166,12 @@ function renderQuestionPage() {
 // hide landing page and display question page
 function startQuiz () {
 
-	$('.start-card').on('click', '#start-button', function (event) {
-		event.preventDefault();
+  $('.start-card').on('click', '#start-button', function (event) {
+    event.preventDefault();
 
     $('.start-page').addClass("hidden");
     $('.question-page').removeClass("hidden");
-	});
+  });
 }
 
 // run quiz app functions
